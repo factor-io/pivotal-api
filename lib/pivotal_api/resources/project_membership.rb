@@ -1,0 +1,18 @@
+module PivotalApi
+  module Resources
+    class ProjectMembership
+      include Virtus.model
+
+      # attribute :client
+
+      attribute :id, Integer
+      attribute :person_id, Integer
+      attribute :project_id, Integer
+      attribute :role, String
+      attribute :project_color, String
+      attribute :wants_comment_notification_emails, Boolean
+      attribute :kind, String
+      attribute :person, PivotalApi::Resources::Person
+    end
+  end
+end
