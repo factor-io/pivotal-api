@@ -1,0 +1,66 @@
+PATH
+  remote: .
+  specs:
+    pivotal-api (0.3.0)
+      addressable
+      excon
+      faraday (~> 0.9.0)
+      faraday_middleware
+      virtus
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.3.6)
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
+    coveralls (0.7.2)
+      multi_json (~> 1.3)
+      rest-client (= 1.6.7)
+      simplecov (>= 0.7)
+      term-ansicolor (= 1.2.2)
+      thor (= 0.18.1)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
+    docile (1.1.5)
+    equalizer (0.0.9)
+    excon (0.43.0)
+    faraday (0.9.1)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.9.1)
+      faraday (>= 0.7.4, < 0.10)
+    ice_nine (0.11.1)
+    mime-types (2.4.3)
+    multi_json (1.10.1)
+    multipart-post (2.0.0)
+    rake (10.4.2)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    simplecov (0.9.1)
+      docile (~> 1.1.0)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.8.0)
+    simplecov-html (0.8.0)
+    term-ansicolor (1.2.2)
+      tins (~> 0.8)
+    thor (0.18.1)
+    thread_safe (0.3.4)
+    tins (0.13.2)
+    virtus (1.0.4)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.3)
+  coveralls
+  pivotal-api!
+  rake
