@@ -45,6 +45,10 @@ module TrackerApi
       def comments
         Endpoints::Comments.new(client)
       end
+
+      def labels
+        Endpoints::Labels.new(client)
+      end
     end
   end
 end

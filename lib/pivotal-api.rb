@@ -23,6 +23,7 @@ module TrackerApi
     autoload :Comments, 'tracker_api/endpoints/comments'
     autoload :Epics, 'tracker_api/endpoints/epics'
     autoload :Iterations, 'tracker_api/endpoints/iterations'
+    autoload :Labels, 'tracker_api/endpoints/labels'
     autoload :Me, 'tracker_api/endpoints/me'
     autoload :Memberships, 'tracker_api/endpoints/memberships'
     autoload :Projects, 'tracker_api/endpoints/projects'
