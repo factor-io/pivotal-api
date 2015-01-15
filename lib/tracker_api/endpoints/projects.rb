@@ -41,6 +41,10 @@ module TrackerApi
       def memberships
         Endpoints::Memberships.new(client)
       end
+
+      def webhooks
+        Endpoints::Webhooks.new(client)
+      end
     end
   end
 end
