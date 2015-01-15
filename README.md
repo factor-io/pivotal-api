@@ -1,23 +1,17 @@
-# TrackerApi
-
-[![Gem Version](https://badge.fury.io/rb/tracker_api.png)](http://badge.fury.io/rb/tracker_api)
-[![Build Status](https://travis-ci.org/dashofcode/tracker_api.png?branch=master)](https://travis-ci.org/dashofcode/tracker_api)
-[![Code Climate](https://codeclimate.com/github/dashofcode/tracker_api.png)](https://codeclimate.com/github/dashofcode/tracker_api)
-[![Coverage Status](https://coveralls.io/repos/dashofcode/tracker_api/badge.png?branch=master)](https://coveralls.io/r/dashofcode/tracker_api?branch=master)
-[![Dependency Status](https://gemnasium.com/dashofcode/tracker_api.png)](https://gemnasium.com/dashofcode/tracker_api)
+# PivotalApi
 
 This gem allows you to easily use the [Pivotal Tracker v5 API](https://www.pivotaltracker.com/help/api/rest/v5).
 
 It’s powered by [Faraday](https://github.com/lostisland/faraday) and [Virtus](https://github.com/solnic/virtus).
 
 ##Demonstration
-[Dash of Agile](https://www.dashofagile.com) uses `tracker_api` to create agile dashboards from Pivotal Tracker projects.
+[Factor.io](https://factor.io/) uses `pivotal-api` to enable DevOps engineers to automate workflows with Pivotal Tracker.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 ```ruby
-gem 'tracker_api', '~> 0.2.0'
+gem 'pivotal-api', '~> 0.3.0'
 ```
 
 And then execute:
@@ -27,20 +21,20 @@ $ bundle install
 
 Or install it yourself as:
 ```bash
-$ gem install tracker_api
+$ gem install pivotal-api
 ```
 
 ## Basic Usage
 
 ```ruby
-client = TrackerApi::Client.new(token: 'my-api-token')                    # Create API client
+client = PivotalApi::Client.new(token: 'my-api-token')                    # Create API client
 
 user_email = client.me.email                                              # Get authenticated user's email
 
 require 'pivotal-api'
 require 'awesome_print'
 
-client = TrackerApi::Client.new token: ENV['PIVOTAL_TRACKER_API_KEY']
+client = PivotalApi::Client.new token: ENV['PIVOTAL_TRACKER_API_KEY']
 
 projects = client.projects.all                                                    # Get all projects
 project  = client.projects.get(123456)                                            # Find project with given ID
@@ -63,22 +57,6 @@ epic  = epics.first
 epic  = client.projects.epics.get 12345, 1603542
 label = epic.label                                                                # Get an epic's label
 ```
-
-## Eager Loading
-
-See Pivotal Tracker API [documentation](https://www.pivotaltracker.com/help/api#Response_Controlling_Parameters) for how to use the `fields` parameter.
-
-```ruby
-client = TrackerApi::Client.new(token: 'my-api-token')                    # Create API client
-
-client.projects(project_id, fields: ':default,labels(name)')               # Eagerly get labels with a project
-client.projects(project_id, fields: ':default,epics')                      # Eagerly get epics with a project
-```
-
-## TODO
-
-- Add missing resources and endpoints
-- Add create, update, delete for resources
 
 ## Contributing
 
