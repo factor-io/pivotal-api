@@ -20,20 +20,19 @@ module TrackerApi
   end
 
   module Endpoints
-    autoload :Epic, 'tracker_api/endpoints/epic'
+    autoload :Comments, 'tracker_api/endpoints/comments'
     autoload :Epics, 'tracker_api/endpoints/epics'
     autoload :Iterations, 'tracker_api/endpoints/iterations'
     autoload :Me, 'tracker_api/endpoints/me'
     autoload :Memberships, 'tracker_api/endpoints/memberships'
-    autoload :Project, 'tracker_api/endpoints/project'
     autoload :Projects, 'tracker_api/endpoints/projects'
     autoload :Stories, 'tracker_api/endpoints/stories'
-    autoload :Story, 'tracker_api/endpoints/story'
     autoload :Tasks, 'tracker_api/endpoints/tasks'
   end
 
   module Resources
     autoload :Account, 'tracker_api/resources/account'
+    autoload :Comment, 'tracker_api/resources/comment'
     autoload :Epic, 'tracker_api/resources/epic'
     autoload :Iteration, 'tracker_api/resources/iteration'
     autoload :Me, 'tracker_api/resources/me'

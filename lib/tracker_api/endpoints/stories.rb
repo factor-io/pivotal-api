@@ -41,6 +41,10 @@ module TrackerApi
       def tasks
         Endpoints::Tasks.new(client)
       end
+
+      def comments
+        Endpoints::Comments.new(client)
+      end
     end
   end
 end
