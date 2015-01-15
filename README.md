@@ -37,18 +37,31 @@ client = TrackerApi::Client.new(token: 'my-api-token')                    # Crea
 
 user_email = client.me.email                                              # Get authenticated user's email
 
-projects = client.projects                                                # Get all projects
-project  = client.project(123456)                                         # Find project with given ID
+require 'pivotal-api'
+require 'awesome_print'
 
-project.stories                                                           # Get all stories for a project
-project.stories(with_state: :unscheduled, limit: 10)                      # Get 10 unscheduled stories for a project
-project.stories(filter: 'requester:OWK label:"jedi stuff"')               # Get all stories that match the given filters
-project.story(847762630)                                                  # Find a story with the given ID
-project.create_story(name: 'Destroy death star')                          # Create a story with the name 'Destroy death star'
+client = TrackerApi::Client.new token: ENV['PIVOTAL_TRACKER_API_KEY']
 
-epics = project.epics                                                     # Get all epics for a project
+projects = client.projects.all                                                    # Get all projects
+project  = client.projects.get(123456)                                            # Find project with given ID
+
+client.projects.stories.all 12345                                                 # Get all stories for a project
+client.projects.stories.all 12345, with_state: :unscheduled, limit: 10            # Get 10 unscheduled stories for a project
+client.projects.stories.all 12345, filter: 'requester:OWK label:"jedi stuff"'     # Get all stories that match the given filters
+client.projects.stories.get 12345, 847762630                                      # Find a story with the given ID
+client.projects.stories.create 12345, name: 'Destroy death star'                    # Create a story with the name 'Destroy death star'
+client.projects.stories.get 12345, 4235423
+
+client.projects.stories.tasks.all 12345, 85721980
+client.projects.stories.tasks.get 12345, 85721980, 28279392
+client.projects.memberships.all 12345
+client.projects.memberships.get 12345, 5015540
+client.projects.iterations.all 12345
+
+epics = client.projects.epics.all 12345                                           # Get all epics for a project
 epic  = epics.first
-label = epic.label                                                        # Get an epic's label
+epic  = client.projects.epics.get 12345, 1603542
+label = epic.label                                                                # Get an epic's label
 ```
 
 ## Eager Loading
@@ -58,9 +71,8 @@ See Pivotal Tracker API [documentation](https://www.pivotaltracker.com/help/api#
 ```ruby
 client = TrackerApi::Client.new(token: 'my-api-token')                    # Create API client
 
-client.project(project_id, fields: ':default,labels(name)')               # Eagerly get labels with a project
-client.project(project_id, fields: ':default,epics')                      # Eagerly get epics with a project
-client.project(project_id).stories(fields: ':default,tasks')              # Eagerly get stories with tasks
+client.projects(project_id, fields: ':default,labels(name)')               # Eagerly get labels with a project
+client.projects(project_id, fields: ':default,epics')                      # Eagerly get epics with a project
 ```
 
 ## TODO
