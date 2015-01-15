@@ -28,6 +28,16 @@ module TrackerApi
         Resources::Story.new({ }.merge(data))
       end
 
+      def update(project_id, id, params)
+        data = client.put("/projects/#{project_id}/stories/#{id}", params: params).body
+
+        Resources::Story.new({ }.merge(data))
+      end
+
+      def delete(project_id, id)
+        client.delete("/projects/#{project_id}/stories/#{id}").body
+      end
+
       def tasks
         Endpoints::Tasks.new(client)
       end
