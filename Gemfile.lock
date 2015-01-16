@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pivotal-api (0.3.0)
+    pivotal-api (0.3.1)
       addressable
       excon
       faraday (~> 0.9.0)
