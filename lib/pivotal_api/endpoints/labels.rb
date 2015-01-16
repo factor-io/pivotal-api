@@ -16,12 +16,6 @@ module PivotalApi
         end
       end
 
-      def get(project_id, story_id, id)
-        data = client.get("/projects/#{project_id}/stories/#{story_id}/labels/#{id}").body
-
-        Resources::Label.new({ project_id: project_id }.merge(data))
-      end
-
       def create(project_id, story_id, params)
         data = client.post("/projects/#{project_id}/stories/#{story_id}/labels", params: params).body
 
