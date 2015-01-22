@@ -1,3 +1,10 @@
 language: ruby
 rvm:
   - 2.1.3
+deploy:
+  provider: rubygems
+  gem: pivotal-api
+  api_key:
+    secure: T24epDVon+Cx5yVd02i1ToHjr5pWnMjTCyudzlAXLBF9Rtsta6N6O41RNuHk94KXzoyfS4r8snblzENqR4OFYGE7VkDR1S14nE1rJWM7O9H3ExJh+mPrGtZNQ2Iaxl/a6wGNUb8TQYQEV8v+Qdt7FyFvtESZxHbSClJ7ChOZ1v0=
+  on:
+    tags: true
