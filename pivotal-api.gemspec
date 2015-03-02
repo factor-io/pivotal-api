@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'addressable', '~> 2.3.7'
   spec.add_dependency 'virtus', '~> 1.0.4'
-  spec.add_dependency 'faraday', '= 0.9.0'
+  spec.add_dependency 'faraday', '~> 0.9.1'
   spec.add_dependency 'faraday_middleware', '~> 0.9.1'
   spec.add_dependency 'excon', '~> 0.44.3'
 end
