@@ -4,9 +4,6 @@ This gem allows you to easily use the [Pivotal Tracker v5 API](https://www.pivot
 
 It’s powered by [Faraday](https://github.com/lostisland/faraday) and [Virtus](https://github.com/solnic/virtus).
 
-##Demonstration
-[Factor.io](https://factor.io/) uses `pivotal-api` to enable DevOps engineers to automate workflows with Pivotal Tracker.
-
 ## Installation
 
 Add this line to your application's Gemfile:
