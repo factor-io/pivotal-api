@@ -1,17 +1,18 @@
 PATH
   remote: .
   specs:
-    pivotal-api (0.3.2)
-      addressable (~> 2.3.7)
-      excon (~> 0.45.3)
-      faraday (~> 0.9.1)
-      faraday_middleware (~> 0.9.1)
-      virtus (~> 1.0.4)
+    pivotal-api (0.3.4)
+      addressable (~> 2.3)
+      excon (~> 0.45)
+      faraday (~> 0.9)
+      faraday_middleware (~> 0.9)
+      virtus (~> 1.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.8)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
@@ -21,15 +22,16 @@ GEM
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     equalizer (0.0.11)
-    excon (0.45.3)
-    faraday (0.9.1)
+    excon (0.60.0)
+    faraday (0.13.1)
       multipart-post (>= 1.2, < 3)
-    faraday_middleware (0.9.1)
-      faraday (>= 0.7.4, < 0.10)
-    ice_nine (0.11.1)
+    faraday_middleware (0.12.2)
+      faraday (>= 0.7.4, < 1.0)
+    ice_nine (0.11.2)
     multipart-post (2.0.0)
+    public_suffix (3.0.1)
     rake (10.4.2)
-    thread_safe (0.3.5)
+    thread_safe (0.3.6)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -41,4 +43,7 @@ PLATFORMS
 
 DEPENDENCIES
   pivotal-api!
-  rake (~> 10.4.2)
+  rake (~> 10.4)
+
+BUNDLED WITH
+   1.15.4
